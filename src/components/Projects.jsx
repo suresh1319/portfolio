@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Projects.css';
 import imageGenerator from '../assets/images/projects/image-generator.png';
-import portfolio from '../assets/images/projects/portfolio.png';
 import pureCareFitness from '../assets/images/projects/purecarefitness.png';
 import snapStudy from '../assets/images/projects/ai_summarizer.png';
 
