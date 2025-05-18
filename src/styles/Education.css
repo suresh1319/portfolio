@@ -1,0 +1,129 @@
+.education {
+  padding: 100px 0;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.education-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.education-timeline {
+  margin-top: 3rem;
+  position: relative;
+}
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: rgba(255, 107, 0, 0.3);
+}
+
+.education-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+}
+
+.education-item:last-child {
+  margin-bottom: 0;
+}
+
+.education-icon-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #ff6b00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.education-icon {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.education-content {
+  background-color: #2a2a2a;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #ff6b00;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.education-degree {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.education-institution {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.education-gpa {
+  color: #ff6b00;
+  font-weight: 600;
+}
+
+.education-location {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 5px;
+}
+
+.education-period {
+  color: #ff6b00;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .education-timeline::before {
+    left: 15px;
+  }
+  
+  .education-item {
+    padding-left: 50px;
+  }
+  
+  .education-icon-container {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .education-icon {
+    font-size: 1rem;
+  }
+  
+  .education-content {
+    padding: 20px;
+  }
+  
+  .education-degree {
+    font-size: 1.1rem;
+  }
+  
+  .education-institution {
+    font-size: 1rem;
+  }
+}

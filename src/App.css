@@ -1,0 +1,66 @@
+.app {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  color: #fff;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #ff6b00;
+}
+
+.section-description {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff6b00;
+  color: #fff;
+  border: 2px solid #ff6b00;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: #ff6b00;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #fff;
+  color: #1a1a1a;
+}
