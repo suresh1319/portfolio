@@ -126,4 +126,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Designed and developed by Veeraboina Suresh © 2024
+Designed and developed by Veeraboina Suresh © 2025
