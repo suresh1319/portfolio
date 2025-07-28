@@ -4,8 +4,7 @@ import '../styles/Projects.css';
 import imageGenerator from '../assets/images/projects/image-generator.png';
 import pureCareFitness from '../assets/images/projects/purecarefitness.png';
 import snapStudy from '../assets/images/projects/ai_summarizer.png';
-import todoApp from '../assets/images/projects/todo-app.png';
-import collabEditor from '../assets/images/projects/collab-editor.png';
+import collabEditor from '../assets/images/projects/Screenshot 2025-07-28 185147.png';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
