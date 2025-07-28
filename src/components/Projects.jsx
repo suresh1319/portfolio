@@ -4,7 +4,7 @@ import '../styles/Projects.css';
 import imageGenerator from '../assets/images/projects/image-generator.png';
 import pureCareFitness from '../assets/images/projects/purecarefitness.png';
 import snapStudy from '../assets/images/projects/ai_summarizer.png';
-import collabEditor from '../assets/images/projects/Screenshot 2025-07-28 185147.png';
+
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
@@ -44,7 +44,6 @@ const Projects = () => {
       id: 4,
       title: 'Todo App',
       description: 'A full-stack web application using the MERN stack that allows you to Add your Todo with their Priorities',
-      image: todoApp,
       category: 'web',
       technologies: ['MongoDB', 'Express.js', 'React.js', 'Node.js'],
       demoLink: 'https://todo-frontend-5x6z.onrender.com',
@@ -54,7 +53,6 @@ const Projects = () => {
       id: 5,
       title: 'Collab Code Editor',
       description: 'A full-stack web application using the MERN stack that allows you to do collaborative coding',
-      image: collabEditor,
       category: 'web',
       technologies: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Socket.io'],
       codeLink: 'https://github.com/suresh1319/Collab-Code-Editor',
