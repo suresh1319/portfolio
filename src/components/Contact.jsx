@@ -1,9 +1,15 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../styles/Contact.css';
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../config/emailjs';
 
 const Contact = () => {
   const form = useRef();
+  
+  useEffect(() => {
+    emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+  }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,9 +26,11 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    const fieldName = name === 'from_name' ? 'name' : 
+                     name === 'from_email' ? 'email' : name;
     setFormData(prevData => ({
       ...prevData,
-      [name]: value
+      [fieldName]: value
     }));
   };
 
@@ -33,27 +41,34 @@ const Contact = () => {
       loading: true
     });
 
-    // Simulate sending an email with a delay
-    setTimeout(() => {
-      // Simulate successful submission
+    emailjs.sendForm(
+      EMAILJS_CONFIG.SERVICE_ID,
+      EMAILJS_CONFIG.TEMPLATE_ID, 
+      form.current
+    )
+    .then(() => {
       setFormStatus({
         submitted: true,
         success: true,
         message: 'Thank you for your message! I will get back to you soon.',
         loading: false
       });
-
-      // Reset form after submission
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
-
-      // Log the form data to console (for demonstration)
-      console.log('Form submitted with data:', formData);
-    }, 1500); // 1.5 second delay to simulate network request
+    })
+    .catch((error) => {
+      console.error('EmailJS Error:', error);
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: 'Failed to send message. Please try again.',
+        loading: false
+      });
+    });
   };
 
   return (
@@ -120,7 +135,7 @@ const Contact = () => {
               <div className="form-group">
                 <input
                   type="text"
-                  name="name"
+                  name="from_name"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
@@ -131,7 +146,7 @@ const Contact = () => {
               <div className="form-group">
                 <input
                   type="email"
-                  name="email"
+                  name="from_email"
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}

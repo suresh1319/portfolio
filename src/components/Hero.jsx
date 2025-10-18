@@ -58,7 +58,19 @@ const Hero = () => {
               and problem-solving. I have a solid foundation in data structures and algorithms, and a keen interest in data science and machine
               learning.
             </p>
-            <a href="#contact" className="btn btn-primary">Hire Me</a>
+            <a 
+              href="#contact" 
+              className="btn btn-primary"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('contact')?.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}
+            >
+              Hire Me
+            </a>
           </div>
           <div className="hero-image" data-aos="fade-left" data-aos-delay="100">
             <div className="profile-image-container">
