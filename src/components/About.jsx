@@ -1,17 +1,22 @@
 import React from 'react';
 import '../styles/About.css';
 import profileImage from '../assets/images/photo.jpg';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const About = () => {
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [imageRef, imageVisible] = useScrollAnimation();
+  const [textRef, textVisible] = useScrollAnimation();
+
   return (
     <section id="about" className="about">
       <div className="about-container">
-        <h2 className="section-title" data-aos="fade-down">About Me</h2>
+        <h2 ref={titleRef} className={`section-title scroll-animate ${titleVisible ? 'visible' : ''}`}>About Me</h2>
         <div className="about-content">
-          <div className="about-image" data-aos="fade-right">
+          <div ref={imageRef} className={`about-image scroll-animate-left ${imageVisible ? 'visible' : ''}`}>
             <img src={profileImage} alt="Veeraboina Suresh" className="profile-img" />
           </div>
-          <div className="about-text" data-aos="fade-left">
+          <div ref={textRef} className={`about-text scroll-animate-right ${textVisible ? 'visible' : ''}`}>
             <h3>Hello, I'm Veeraboina Suresh</h3>
             <p>
               Motivated Full-Stack Developer skilled in Node.js, Express.js, and MongoDB, with a strong focus on backend development
@@ -22,7 +27,7 @@ const About = () => {
               I'm a quick learner with a passion for building efficient, scalable web applications. My experience includes frontend development
               as an intern at CODTECH IT SOLUTIONS, where I developed and optimized web applications using HTML, CSS, and JavaScript.
             </p>
-            <div className="about-details" data-aos="fade-up">
+            <div className="about-details animate-fadeInUp">
               <div className="detail-item">
                 <span className="detail-label">Name:</span>
                 <span className="detail-value">Veeraboina Suresh</span>

@@ -1,8 +1,12 @@
 import React from 'react';
 import '../styles/Education.css';
 import { FaGraduationCap, FaSchool, FaUniversity } from 'react-icons/fa';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Education = () => {
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [timelineRef, timelineVisible] = useScrollAnimation();
+
   const educationData = [
     {
       id: 1,
@@ -36,14 +40,14 @@ const Education = () => {
   return (
     <section id="education" className="education">
       <div className="education-container">
-        <h2 className="section-title" data-aos="fade-down">Education</h2>
-        <p className="section-description" data-aos="fade-up">
+        <h2 ref={titleRef} className={`section-title scroll-animate ${titleVisible ? 'visible' : ''}`}>Education</h2>
+        <p className="section-description">
           My academic journey and qualifications
         </p>
 
-        <div className="education-timeline">
+        <div ref={timelineRef} className={`education-timeline scroll-animate ${timelineVisible ? 'visible' : ''}`}>
           {educationData.map((item) => (
-            <div key={item.id} className="education-item" data-aos="fade-up">
+            <div key={item.id} className="education-item">
               <div className="education-icon-container">
                 {item.icon}
               </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Projects.css';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 import imageGenerator from '../assets/images/projects/image-generator.png';
 import pureCareFitness from '../assets/images/projects/purecarefitness.png';
@@ -8,6 +9,8 @@ import snapStudy from '../assets/images/projects/ai_summarizer.png';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [projectsRef, projectsVisible] = useScrollAnimation();
 
   const projects = [
     {
@@ -64,12 +67,12 @@ const Projects = () => {
   return (
     <section id="projects" className="projects">
       <div className="projects-container">
-        <h2 className="section-title" data-aos="fade-down">My Projects</h2>
-        <p className="section-description" data-aos="fade-up">
+        <h2 ref={titleRef} className={`section-title scroll-animate ${titleVisible ? 'visible' : ''}`}>My Projects</h2>
+        <p className="section-description">
           Here are some of the projects I've worked on
         </p>
 
-        <div className="project-filters" data-aos="fade-up">
+        <div className="project-filters">
           <button className={filter === 'all' ? 'active' : ''} onClick={() => setFilter('all')}>
             All
           </button>
@@ -81,9 +84,9 @@ const Projects = () => {
           </button>
         </div>
 
-        <div className="projects-grid">
+        <div ref={projectsRef} className={`projects-grid scroll-animate ${projectsVisible ? 'visible' : ''}`}>
           {filteredProjects.map((project) => (
-            <div key={project.id} className="project-card" data-aos="fade-up">
+            <div key={project.id} className="project-card card-hover">
               <div className="project-image">
                 {project.image ? (
                   <img src={project.image} alt={project.title} className="project-img" />

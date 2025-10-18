@@ -1,7 +1,11 @@
 import React from 'react';
 import '../styles/Skills.css';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Skills = () => {
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [skillsRef, skillsVisible] = useScrollAnimation();
+
   const skillCategories = [
     {
       category: 'Languages',
@@ -49,14 +53,14 @@ const Skills = () => {
   return (
     <section id="skills" className="skills">
       <div className="skills-container">
-        <h2 className="section-title" data-aos="fade-down">My Skills</h2>
-        <p className="section-description" data-aos="fade-up">
+        <h2 ref={titleRef} className={`section-title scroll-animate ${titleVisible ? 'visible' : ''}`}>My Skills</h2>
+        <p className="section-description">
           Here are some of the technologies and tools I work with
         </p>
 
-        <div className="skills-grid">
+        <div ref={skillsRef} className={`skills-grid scroll-animate ${skillsVisible ? 'visible' : ''}`}>
           {skillCategories.map((category, index) => (
-            <div key={index} className="skill-category" data-aos="fade-up">
+            <div key={index} className="skill-category">
               <h3>{category.category}</h3>
               <div className="skills-list">
                 {category.skills.map((skill, skillIndex) => (

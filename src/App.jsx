@@ -10,11 +10,14 @@ import Education from './components/Education';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ParticlesBackground from './components/ParticlesBackground';
+
 
 function App() {
 
   return (
     <div className="app">
+      <ParticlesBackground />
       <Navbar />
       <Hero />
       <About />
