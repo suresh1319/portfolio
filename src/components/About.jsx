@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/About.css';
-import profileImage from '../assets/images/photo.jpg';
+import { images } from '../constants/images';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const About = () => {
@@ -14,7 +14,7 @@ const About = () => {
         <h2 ref={titleRef} className={`section-title scroll-animate ${titleVisible ? 'visible' : ''}`}>About Me</h2>
         <div className="about-content">
           <div ref={imageRef} className={`about-image scroll-animate-left ${imageVisible ? 'visible' : ''}`}>
-            <img src={profileImage} alt="Veeraboina Suresh" className="profile-img" />
+            <img src={images.profile} alt="Veeraboina Suresh" className="profile-img" />
           </div>
           <div ref={textRef} className={`about-text scroll-animate-right ${textVisible ? 'visible' : ''}`}>
             <h3>Hello, I'm Veeraboina Suresh</h3>

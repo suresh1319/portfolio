@@ -148,3 +148,18 @@
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 107, 0, 0.1);
 }
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ff6b00;
+  padding: 2rem;
+}
+
+.project-stats {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}

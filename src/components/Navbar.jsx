@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Navbar.css';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { images } from '../constants/images';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,6 +26,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <a href="#home" className="navbar-logo" onClick={(e) => handleSmoothScroll(e, 'home')}>
+          <img src={images.logo} alt="Suresh V" className="logo-image" />
           <span className="logo-text">Suresh <span className="logo-x">V</span></span>
         </a>
 

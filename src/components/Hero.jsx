@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import '../styles/Hero.css';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import profileImage from '../assets/images/photo.jpg';
+import { images } from '../constants/images';
 import Typed from 'typed.js';
 
 const Hero = () => {
@@ -39,7 +39,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero" style={{backgroundImage: `url(${images.heroBg})`}}>
       <div className="moving-particles">
         {Array.from({ length: 30 }, (_, i) => {
           const size = Math.random() * 4 + 3;
@@ -89,7 +89,7 @@ const Hero = () => {
           </div>
           <div className="hero-image animate-fadeInRight">
             <div className="profile-image-container">
-              <img src={profileImage} alt="Veeraboina Suresh" className="profile-image" />
+              <img src={images.profile} alt="Veeraboina Suresh" className="profile-image" />
             </div>
           </div>
         </div>

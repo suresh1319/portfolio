@@ -151,8 +151,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .scroll-animate.visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .scroll-animate-left {
