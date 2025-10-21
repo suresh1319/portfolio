@@ -55,6 +55,12 @@
   font-size: 1.2rem;
 }
 
+.btech-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
 .education-content {
   background-color: #2a2a2a;
   padding: 25px;
@@ -62,6 +68,24 @@
   border-left: 4px solid #ff6b00;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.education-text {
+  flex: 1;
+}
+
+.education-logo {
+  margin-left: 20px;
+}
+
+.college-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .education-content:hover {

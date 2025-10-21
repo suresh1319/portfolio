@@ -1,7 +1,8 @@
 import React from 'react';
 import '../styles/Education.css';
-import { FaGraduationCap, FaSchool, FaUniversity } from 'react-icons/fa';
+import { FaGraduationCap, FaSchool } from 'react-icons/fa';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { images } from '../constants/images';
 
 const Education = () => {
   const [titleRef, titleVisible] = useScrollAnimation();
@@ -15,7 +16,7 @@ const Education = () => {
       location: 'Hyderabad, India',
       period: '2023 — Present',
       gpa: '9.38',
-      icon: <FaUniversity className="education-icon" />
+      icon: <img src={images.btechLogo} alt="B.Tech" className="education-icon btech-logo" />
     },
     {
       id: 2,
@@ -52,10 +53,22 @@ const Education = () => {
                 {item.icon}
               </div>
               <div className="education-content">
-                <h3 className="education-degree">{item.degree}</h3>
-                <h4 className="education-institution">{item.institution} <span className="education-gpa">(GPA: {item.gpa})</span></h4>
-                <p className="education-location">{item.location}</p>
-                <p className="education-period">{item.period}</p>
+                <div className="education-text">
+                  <h3 className="education-degree">{item.degree}</h3>
+                  <h4 className="education-institution">{item.institution} <span className="education-gpa">(GPA: {item.gpa})</span></h4>
+                  <p className="education-location">{item.location}</p>
+                  <p className="education-period">{item.period}</p>
+                </div>
+                {item.id === 1 && (
+                  <div className="education-logo">
+                    <img src={images.btechLogo} alt="B.Tech Logo" className="college-logo" />
+                  </div>
+                )}
+                {item.id === 2 && (
+                  <div className="education-logo">
+                    <img src={images.logo} alt="College Logo" className="college-logo" />
+                  </div>
+                )}
               </div>
             </div>
           ))}

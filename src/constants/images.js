@@ -6,6 +6,7 @@ import heroBg from '../assets/images/hero-bg.jpg';
 
 // Logo
 import logoImage from '../assets/images/image logo.png';
+import btechLogo from '../assets/images/b_tech logo.png';
 
 // Project Images
 import aiSummarizerImg from '../assets/images/projects/ai_summarizer.png';
@@ -24,6 +25,7 @@ export const images = {
   profile: profilePhoto,
   heroBg: heroBg,
   logo: logoImage,
+  btechLogo: btechLogo,
   projects: {
     aiSummarizer: aiSummarizerImg,
     blogapp: blogappImg,

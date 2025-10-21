@@ -1,6 +1,9 @@
 import React from 'react';
 import '../styles/Skills.css';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { FaPython, FaJava, FaJs, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaDatabase } from 'react-icons/fa';
+import { SiTailwindcss, SiExpress, SiMongodb, SiFirebase } from 'react-icons/si';
+import { VscCode } from 'react-icons/vsc';
 
 const Skills = () => {
   const [titleRef, titleVisible] = useScrollAnimation();
@@ -10,42 +13,42 @@ const Skills = () => {
     {
       category: 'Languages',
       skills: [
-        { name: 'Python', level: 85 },
-        { name: 'Java', level: 80 },
-        { name: 'JavaScript', level: 85 },
-        { name: 'SQL', level: 75 },
+        { name: 'Python', icon: FaPython },
+        { name: 'Java', icon: FaJava },
+        { name: 'JavaScript', icon: FaJs },
+        { name: 'SQL', icon: FaDatabase },
       ]
     },
     {
       category: 'Frontend',
       skills: [
-        { name: 'HTML', level: 90 },
-        { name: 'CSS', level: 85 },
-        { name: 'Tailwind CSS', level: 80 },
-        { name: 'React', level: 75 },
+        { name: 'HTML', icon: FaHtml5 },
+        { name: 'CSS', icon: FaCss3Alt },
+        { name: 'Tailwind CSS', icon: SiTailwindcss },
+        { name: 'React', icon: FaReact },
       ]
     },
     {
       category: 'Backend',
       skills: [
-        { name: 'Node.js', level: 85 },
-        { name: 'Express.js', level: 80 },
+        { name: 'Node.js', icon: FaNodeJs },
+        { name: 'Express.js', icon: SiExpress },
       ]
     },
     {
       category: 'Databases',
       skills: [
-        { name: 'MongoDB', level: 85 },
-        { name: 'Firebase', level: 75 },
+        { name: 'MongoDB', icon: SiMongodb },
+        { name: 'Firebase', icon: SiFirebase },
       ]
     },
     {
       category: 'Tools & Others',
       skills: [
-        { name: 'Git', level: 80 },
-        { name: 'GitHub', level: 80 },
-        { name: 'VS Code', level: 90 },
-        { name: 'Python IDE', level: 85 },
+        { name: 'Git', icon: FaGitAlt },
+        { name: 'GitHub', icon: FaGithub },
+        { name: 'VS Code', icon: VscCode },
+        { name: 'Python IDE', icon: FaPython },
       ]
     }
   ];
@@ -65,16 +68,10 @@ const Skills = () => {
               <div className="skills-list">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="skill-item">
-                    <div className="skill-info">
-                      <span className="skill-name">{skill.name}</span>
-                      <span className="skill-percentage">{skill.level}%</span>
-                    </div>
-                    <div className="skill-bar">
-                      <div
-                        className="skill-progress"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
+                    <span className="skill-icon">
+                      <skill.icon />
+                    </span>
+                    <span className="skill-name">{skill.name}</span>
                   </div>
                 ))}
               </div>
