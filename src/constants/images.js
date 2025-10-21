@@ -7,6 +7,7 @@ import heroBg from '../assets/images/hero-bg.jpg';
 // Logo
 import logoImage from '../assets/images/image logo.png';
 import btechLogo from '../assets/images/b_tech logo.png';
+import sriChaitanyaLogo from '../assets/images/Sri Chaitanya.jpg';
 
 // Project Images
 import aiSummarizerImg from '../assets/images/projects/ai_summarizer.png';
@@ -26,6 +27,7 @@ export const images = {
   heroBg: heroBg,
   logo: logoImage,
   btechLogo: btechLogo,
+  sriChaitanyaLogo: sriChaitanyaLogo,
   projects: {
     aiSummarizer: aiSummarizerImg,
     blogapp: blogappImg,

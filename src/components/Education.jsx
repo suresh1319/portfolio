@@ -66,7 +66,7 @@ const Education = () => {
                 )}
                 {item.id === 2 && (
                   <div className="education-logo">
-                    <img src={images.logo} alt="College Logo" className="college-logo" />
+                    <img src={images.sriChaitanyaLogo} alt="Sri Chaitanya Logo" className="college-logo" />
                   </div>
                 )}
               </div>
